@@ -4,7 +4,9 @@ const router = express.Router();
 const authRoutes = require('./auth.routes');
 const clientRoutes = require('./clientes.routes');
 const bookingRoutes = require('./bookings.routes');
+const healthRoutes = require('./health.routes');
 
+router.use(healthRoutes);
 router.use('/auth', authRoutes);
 router.use('/clients', clientRoutes);
 router.use('/bookings', bookingRoutes);

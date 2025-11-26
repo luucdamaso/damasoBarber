@@ -36,4 +36,27 @@ async function login(req, res, next) {
   }
 }
 
-module.exports = { register, login };
+async function changePassword(req, res, next) {
+  try {
+    const userId = req.user?.id;
+    const { currentPassword, newPassword } = req.body;
+
+    if (!userId) return res.status(401).json({ message: 'authorization required' });
+    if (!currentPassword || !newPassword) return res.status(400).json({ message: 'currentPassword and newPassword required' });
+
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return res.status(404).json({ message: 'user not found' });
+
+    const ok = await bcrypt.compare(currentPassword, user.password);
+    if (!ok) return res.status(401).json({ message: 'invalid credentials' });
+
+    const hash = await bcrypt.hash(newPassword, 10);
+    await prisma.user.update({ where: { id: userId }, data: { password: hash } });
+
+    return res.json({ message: 'password changed' });
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { register, login, changePassword };

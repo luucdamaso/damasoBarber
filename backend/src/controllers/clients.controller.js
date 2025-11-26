@@ -40,9 +40,15 @@ async function update(req, res, next) {
 async function remove(req, res, next) {
   try {
     const { id } = req.params;
+
     await prisma.client.delete({ where: { id } });
-    res.status(204).send();
-  } catch (err) { next(err); }
+    return res.status(204).send();
+  } catch (err) {
+    if (err?.code === 'P2025') {
+      return res.status(404).json({ message: 'client not found' });
+    }
+    next(err);
+  }
 }
 
 module.exports = { list, getById, create, update, remove };

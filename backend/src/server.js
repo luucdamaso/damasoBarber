@@ -8,6 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const jsonError = require('./middlewares/jsonError.middleware');
+app.use(jsonError);
+
+const logger = require('./middlewares/logger.middleware');
+app.use(logger);
+
 app.use('/api', routes);
 
 // health
