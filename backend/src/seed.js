@@ -24,12 +24,11 @@ async function main() {
     data: { name: 'Maria Souza', phone: '11988880000', email: 'maria@example.com' }
   });
 
-  // create some bookings for today
   const now = new Date();
   const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 
-  const start1 = new Date(today.getTime() + 10 * 60 * 60 * 1000); // today 10:00 UTC
-  const end1 = new Date(start1.getTime() + 60 * 60000); // 1 hour
+  const start1 = new Date(today.getTime() + 10 * 60 * 60 * 1000); 
+  const end1 = new Date(start1.getTime() + 60 * 60000); 
 
   const start2 = new Date(today.getTime() + 12 * 60 * 60 * 1000);
   const end2 = new Date(start2.getTime() + 30 * 60000);
