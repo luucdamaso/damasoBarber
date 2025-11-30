@@ -270,7 +270,7 @@ Este projeto foi desenvolvido para fins acadêmicos.
 
 Para mais informações sobre o projeto, consulte:
 
-[Artigo Científico Completo](./docs/Artigo_Projeto_Integrador_DamasoBarber.md)
+[Artigo Científico Completo](./docs/Projeto_Integrador_DamasoBarber.pdf)
 [Documentação do Prisma](https://www.prisma.io/docs)
 [Documentação do React](https://react.dev/)
 [Documentação do Node.js](https://nodejs.org/)
