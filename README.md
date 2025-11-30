@@ -6,37 +6,37 @@ O **Damaso Barber** é um sistema web completo desenvolvido para gestão de barb
 
 ## 🎯 Funcionalidades
 
-***Autenticação de Usuários**: Sistema seguro de login e registro com JWT
-***Gestão de Clientes**: Cadastro, edição, visualização e exclusão de clientes
-***Catálogo de Serviços**: Gerenciamento completo dos serviços oferecidos
-***Sistema de Agendamentos**: Controle de horários, status e histórico de atendimentos
-***Dashboard Administrativo**: Visão consolidada das operações do estabelecimento
-***Interface Responsiva**: Design adaptável para diferentes dispositivos
+**Autenticação de Usuários**: Sistema seguro de login e registro com JWT
+**Gestão de Clientes**: Cadastro, edição, visualização e exclusão de clientes
+**Catálogo de Serviços**: Gerenciamento completo dos serviços oferecidos
+**Sistema de Agendamentos**: Controle de horários, status e histórico de atendimentos
+**Dashboard Administrativo**: Visão consolidada das operações do estabelecimento
+**Interface Responsiva**: Design adaptável para diferentes dispositivos
 
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
 
-***React 19.0.0**: Biblioteca para construção de interfaces de usuário
-***TypeScript 5.6.3**: Superset tipado do JavaScript
-***Vite 7.1.7**: Build tool moderna e rápida
-***Wouter 3.3.5**: Roteamento leve para React
-***Radix UI**: Componentes acessíveis e customizáveis
-***Tailwind CSS 4.1.14**: Framework CSS utility-first
-***Axios**: Cliente HTTP para requisições
-***React Hook Form 7.64.0**: Gerenciamento de formulários
-***Zod 4.1.12**: Validação de schemas
+**React 19.0.0**: Biblioteca para construção de interfaces de usuário
+**TypeScript 5.6.3**: Superset tipado do JavaScript
+**Vite 7.1.7**: Build tool moderna e rápida
+**Wouter 3.3.5**: Roteamento leve para React
+**Radix UI**: Componentes acessíveis e customizáveis
+**Tailwind CSS 4.1.14**: Framework CSS utility-first
+**Axios**: Cliente HTTP para requisições
+**React Hook Form 7.64.0**: Gerenciamento de formulários
+**Zod 4.1.12**: Validação de schemas
 
 ### Backend
 
-***Node.js**: Ambiente de execução JavaScript
-***Express 4.18.2**: Framework web para Node.js
-***Prisma 5.22.0**: ORM moderno para Node.js
-***MySQL**: Sistema gerenciador de banco de dados
-***JSON Web Token 9.0.0**: Autenticação via JWT
-***Bcrypt 5.1.0**: Criptografia de senhas
-***CORS 2.8.5**: Middleware para Cross-Origin Resource Sharing
-***Dotenv 16.0.0**: Gerenciamento de variáveis de ambiente
+**Node.js**: Ambiente de execução JavaScript
+**Express 4.18.2**: Framework web para Node.js
+**Prisma 5.22.0**: ORM moderno para Node.js
+**MySQL**: Sistema gerenciador de banco de dados
+**JSON Web Token 9.0.0**: Autenticação via JWT
+**Bcrypt 5.1.0**: Criptografia de senhas
+**CORS 2.8.5**: Middleware para Cross-Origin Resource Sharing
+**Dotenv 16.0.0**: Gerenciamento de variáveis de ambiente
 
 ## 📁 Estrutura do Projeto
 
@@ -84,9 +84,9 @@ damasoBarber/
 
 ### Pré-requisitos
 
-*Node.js (versão 18 ou superior)
-*MySQL (versão 8 ou superior)
-*npm ou pnpm
+Node.js (versão 18 ou superior)
+MySQL (versão 8 ou superior)
+npm ou pnpm
 
 ### Passo 1: Clonar o Repositório
 
@@ -153,41 +153,41 @@ A aplicação estará disponível em `http://localhost:5173`
 
 ### User (Usuário)
 
-*id`: UUID (chave primária)
-*email`: String (único)
-*name`: String (opcional)
-*password`: String (criptografado)
-*role`: String (padrão: "user")
-*createdAt`: DateTime
+id`: UUID (chave primária)
+email`: String (único)
+name`: String (opcional)
+password`: String (criptografado)
+role`: String (padrão: "user")
+createdAt`: DateTime
 
 ### Client (Cliente)
 
-*`id`: UUID (chave primária)
-*`name`: String
-*`phone`: String
-*`email`: String (opcional)
-*`notes`: String (opcional)
-*`bookings`: Relação com Booking[]
-*`createdAt`: DateTime
+`id`: UUID (chave primária)
+`name`: String
+`phone`: String
+`email`: String (opcional)
+`notes`: String (opcional)
+`bookings`: Relação com Booking[]
+`createdAt`: DateTime
 
 ### Service (Serviço)
 
-*`id`: UUID (chave primária)
-*`name`: String
-*`price`: Float
-*`durationMinutes`: Int (opcional)
-*`createdAt`: DateTime
+`id`: UUID (chave primária)
+`name`: String
+`price`: Float
+`durationMinutes`: Int (opcional)
+`createdAt`: DateTime
 
 ### Booking (Agendamento)
 
-*`id`: UUID (chave primária)
-*`clientId`: String (chave estrangeira)
-*`client`: Relação com Client
-*`start`: DateTime
-*`end`: DateTime
-*`service`: String
-*`status`: String (scheduled | cancelled | done)
-*`createdAt`: DateTime
+`id`: UUID (chave primária)
+`clientId`: String (chave estrangeira)
+`client`: Relação com Client
+`start`: DateTime
+`end`: DateTime
+`service`: String
+`status`: String (scheduled | cancelled | done)
+`createdAt`: DateTime
 
 ## 🔐 Autenticação
 
@@ -205,36 +205,36 @@ As senhas são criptografadas usando **bcrypt** antes de serem armazenadas no ba
 
 ### Autenticação
 
-*`POST /api/auth/register` - Registrar novo usuário
-*`POST /api/auth/login` - Fazer login
+`POST /api/auth/register` - Registrar novo usuário
+`POST /api/auth/login` - Fazer login
 
 ### Clientes
 
-*`GET /api/clients` - Listar todos os clientes
-*`GET /api/clients/:id` - Obter detalhes de um cliente
-*`POST /api/clients` - Criar novo cliente
-*`PUT /api/clients/:id` - Atualizar cliente
-*`DELETE /api/clients/:id` - Deletar cliente
+`GET /api/clients` - Listar todos os clientes
+`GET /api/clients/:id` - Obter detalhes de um cliente
+`POST /api/clients` - Criar novo cliente
+`PUT /api/clients/:id` - Atualizar cliente
+`DELETE /api/clients/:id` - Deletar cliente
 
 ### Serviços
 
-*`GET /api/services` - Listar todos os serviços
-*`GET /api/services/:id` - Obter detalhes de um serviço
-*`POST /api/services` - Criar novo serviço
-*`PUT /api/services/:id` - Atualizar serviço
-*`DELETE /api/services/:id` - Deletar serviço
+`GET /api/services` - Listar todos os serviços
+`GET /api/services/:id` - Obter detalhes de um serviço
+`POST /api/services` - Criar novo serviço
+`PUT /api/services/:id` - Atualizar serviço
+`DELETE /api/services/:id` - Deletar serviço
 
 ### Agendamentos
 
-*`GET /api/bookings` - Listar todos os agendamentos
-*`GET /api/bookings/:id` - Obter detalhes de um agendamento
-*`POST /api/bookings` - Criar novo agendamento
-*`PUT /api/bookings/:id` - Atualizar agendamento
-*`DELETE /api/bookings/:id` - Deletar agendamento
+`GET /api/bookings` - Listar todos os agendamentos
+`GET /api/bookings/:id` - Obter detalhes de um agendamento
+`POST /api/bookings` - Criar novo agendamento
+`PUT /api/bookings/:id` - Atualizar agendamento
+`DELETE /api/bookings/:id` - Deletar agendamento
 
 ### Health Check
 
-*`GET /api/health` - Verificar status da API
+`GET /api/health` - Verificar status da API
 
 ## 🧪 Scripts Disponíveis
 
@@ -270,10 +270,10 @@ Este projeto foi desenvolvido para fins acadêmicos.
 
 Para mais informações sobre o projeto, consulte:
 
-*[Artigo Científico Completo](./docs/Artigo_Projeto_Integrador_DamasoBarber.md)
-*[Documentação do Prisma](https://www.prisma.io/docs)
-*[Documentação do React](https://react.dev/)
-*[Documentação do Node.js](https://nodejs.org/)
+[Artigo Científico Completo](./docs/Artigo_Projeto_Integrador_DamasoBarber.md)
+[Documentação do Prisma](https://www.prisma.io/docs)
+[Documentação do React](https://react.dev/)
+[Documentação do Node.js](https://nodejs.org/)
 
 ## 🤝 Contribuições
 
